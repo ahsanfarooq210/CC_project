@@ -1,6 +1,9 @@
 package Entitiy;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class Grammer
 {
@@ -68,6 +71,18 @@ public class Grammer
     {
         this.nonTerminals.put(s, s);
     }
+    public ArrayList<String> getProductions ()
+    {
+        ArrayList<String> ans =new ArrayList<>();
+        StringTokenizer tokenizer=new StringTokenizer(RHS, " ");
+        while (tokenizer.hasMoreTokens())
+        {
+            ans.add(tokenizer.nextToken());
+        }
+        Collections.reverse(ans);
+        return ans;
+    }
+
 
 
 }
