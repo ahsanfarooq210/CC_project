@@ -14,7 +14,7 @@ public class Grammer
     {
         LHS = "";
         RHS = "";
-        n
+        nonTerminals=new HashMap<>();
     }
 
     public Grammer(String LHS, String RHS)
