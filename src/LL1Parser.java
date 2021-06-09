@@ -41,23 +41,23 @@ public class LL1Parser
         Grammer g25 = new Grammer("idset'", ", idset");
 
         table = new Grammer[][]{
-                /*          void    main    id  (     )   intlit  *    +     ;    cout  cin    int    <    >    ,      $      }       {   */
-                /*Cprogram*/{g1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                /*AS*/      {null, null, g10, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                /*E*/       {null, null, g11, g11, null, g11, null, null, null, null, null, null, null, null, null, null, null, null},
-                /*E'*/      {null, null, null, null, g19, null, g18, null, g19, null, null, null, null, null, null, null, null, null},
-                /*F*/       {null, null, g14, g13, null, g15, null, null, null, null, null, null, null, null, null, null, null, null},
-                /*T*/       {null, null, g12, g12, null, g12, null, null, null, null, null, null, null, null, null, null, null, null},
-                /*T'*/      {null, null, null, null, g21, null, g21, g20, g21, null, null, null, null, null, null, null, null, null},
-                /*cinstmt*/ {null, null, null, null, null, null, null, null, null, null, g17, null, null, null, null, null, null, null},
-                /*coutstmt*/{null, null, null, null, null, null, null, null, null, g16, null, null, null, null, null, null, null, null},
-                /*decstmt*/ {null, null, null, null, null, null, null, null, null, null, null, g7, null, null, null, null, null, null},
-                /*idset*/   {null, null, g9, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                /*idset' */ {null, null, null, null, null, null, null, null, g24, null, null, null, null, null, g25, null, null, null},
-                /*stmt*/    {null, null, g4, null, null, null, null, null, null, g5, g6, g3, null, null, null, null, null, null},
-                /*stmtset*/ {null, null, g2, null, null, null, null, null, null, g2, g2, g2, null, null, null, null, null, null},
-                /*stmtset'*/{null, null, g23, null, null, null, null, null, null, g23, g23, g23, null, null, null, null, g22, null},
-                /*type*/    {null, null, null, null, null, null, null, null, null, null, null, g8, null, null, null, null, null, null}
+                /*          void    main  id    (     )   intlit   *    +     ;    cout  cin    int    <    >    ,      $      }    {  = */
+                /*Cprogram*/{g1,   null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                /*AS*/      {null, null, g10 , null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                /*E*/       {null, null, g11 , g11 , null, g11 , null, null, null, null, null, null, null, null, null, null, null, null},
+                /*E'*/      {null, null, null, null, g19 , null, g18 , null, g19 , null, null, null, null, null, null, null, null, null},
+                /*F*/       {null, null, g14 , g13 , null, g15 , null, null, null, null, null, null, null, null, null, null, null, null},
+                /*T*/       {null, null, g12 , g12 , null, g12 , null, null, null, null, null, null, null, null, null, null, null, null},
+                /*T'*/      {null, null, null, null, g21 , null, g21 , g20 , g21 , null, null, null, null, null, null, null, null, null},
+                /*cinstmt*/ {null, null, null, null, null, null, null, null, null, null, g17 , null, null, null, null, null, null, null},
+                /*coutstmt*/{null, null, null, null, null, null, null, null, null, g16 , null, null, null, null, null, null, null, null},
+                /*decstmt*/ {null, null, null, null, null, null, null, null, null, null, null, g7  , null, null, null, null, null, null},
+                /*idset*/   {null, null, g9  , null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                /*idset' */ {null, null, null, null, null, null, null, null, g24 , null, null, null, null, null, g25 , null, null, null},
+                /*stmt*/    {null, null, g4  , null, null, null, null, null, null, g5  , g6  , g3  , null, null, null, null, null, null},
+                /*stmtset*/ {null, null, g2  , null, null, null, null, null, null, g2  , g2  , g2  , null, null, null, null, null, null},
+                /*stmtset'*/{null, null, g23 , null, null, null, null, null, null, g23 , g23 , g23 , null, null, null, null, g22 , null},
+                /*type*/    {null, null, null, null, null, null, null, null, null, null, null, g8  , null, null, null, null, null, null}
 
         };
     }
