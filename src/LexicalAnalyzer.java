@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -20,7 +21,7 @@ public class LexicalAnalyzer
 
     private void populateTokens()
     {
-        tokens = new String[]{"", "", "id", "", "int lit", "+ operator", "= operator", "* operator", "", "<< operator", "", ">> operator", "( punctuation", ") punctuation", "; punctuation", "{ punctuation", "} punctuation"};
+        tokens = new String[]{"", "", "id", "", "intlit", "+", "=", "*", "", "<<", "", ">>", "(", ")", ";", "{", "}"};
     }
 
     private void populateAcceptingState()
@@ -62,8 +63,9 @@ public class LexicalAnalyzer
                 };
     }
 
-    public LinkedHashMap<String, String> validate(String input)
+    public ArrayList<String> validate(String input)
     {
+        ArrayList<String> list =new ArrayList<>();
         int state = 0;
         String tkn = "";
         for (int i = 0; i < input.length(); i++)
@@ -78,6 +80,7 @@ public class LexicalAnalyzer
             if (acceptance == 1)
             {
                 ans.put(tkn, tokens[state]);
+                list.add(tokens[state]);
                 tkn = "";
                 state = 0;
             }
@@ -91,6 +94,7 @@ public class LexicalAnalyzer
                         if (keywords.containsKey(tkn.substring(0, tkn.length() - 1)))
                         {
                             ans.put(tkn.substring(0, tkn.length() - 1), "keyword");
+                            list.add(tkn.substring(0, tkn.length() - 1));
                             tkn = "";
                             state = 0;
                             i--;
@@ -99,6 +103,7 @@ public class LexicalAnalyzer
                         {
                             tkn = tkn.substring(0, tkn.length() - 1);
                             ans.put(tkn, tokens[state]);
+                            list.add(tokens[state]);
                             tkn = "";
                             state = 0;
                             i--;
@@ -108,6 +113,7 @@ public class LexicalAnalyzer
                     {
                         tkn = tkn.substring(0, tkn.length() - 1);
                         ans.put(tkn, tokens[state]);
+                        list.add(tokens[state]);
                         state = 0;
                         tkn = "";
                         i--;
@@ -119,7 +125,11 @@ public class LexicalAnalyzer
                 tkn = "";
             }
         }
-        return ans;
+//        for (int i=0;i<list.size();i++)
+//        {
+//            System.out.println(list.get(i));
+//        }
+        return list;
     }
 
     private int checkAcceptance(int state)

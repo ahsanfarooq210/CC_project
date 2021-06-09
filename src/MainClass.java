@@ -1,30 +1,32 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class MainClass
 {
     public static void main(String[] args)
     {
-//       String input="void main(){int a; a=10; int b; b=6; b+a; cout<<a;}";
-//       LexicalAnalyzer analyzer=new LexicalAnalyzer();
-//       analyzer.validate(input).forEach((k,v)->System.out.println(k+" is "+v));
+        String input = "void main(){int a; cin>>a; cout<<a; int b; cin>>b; int c; c=a+b; cout<<c;}";
+        LexicalAnalyzer analyzer = new LexicalAnalyzer();
+        ArrayList<String>ansl=analyzer.validate(input);
+        System.out.println("output of the lexical analyzer");
+        System.out.println(ansl.toString());
 
         LL1Parser parser=new LL1Parser();
-        ArrayList<String>list=new ArrayList<>();
-        list.add("void");
-        list.add("main");
-        list.add("(");
-        list.add(")");
-        list.add("{");
-        list.add("int");
-        list.add("id");
-        list.add(";");
-        list.add("id");
-        list.add("=");
-        list.add("intlit");
-        list.add(";");
-        list.add("}");
-        ArrayList<String> ans=parser.validate(list);
+//        ArrayList<String>list=new ArrayList<>();
+//        list.add("void");
+//        list.add("main");
+//        list.add("(");
+//        list.add(")");
+//        list.add("{");
+//        list.add("int");
+//        list.add("id");
+//        list.add(";");
+//        list.add("id");
+//        list.add("=");
+//        list.add("intlit");
+//        list.add(";");
+//        list.add("}");
+        System.out.println("output of the LL1 parser");
+        ArrayList<String> ans=parser.validate(ansl);
         if(ans!=null)
         {
             for(int i=0;i<ans.size();i++)

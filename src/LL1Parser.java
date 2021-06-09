@@ -29,8 +29,8 @@ public class LL1Parser
         Grammer g13 = new Grammer("F", "( E )");
         Grammer g14 = new Grammer("F", "id");
         Grammer g15 = new Grammer("F", "intlit");
-        Grammer g16 = new Grammer("coutstmt", "cout < < id");
-        Grammer g17 = new Grammer("cinstmt", "cin > > id");
+        Grammer g16 = new Grammer("coutstmt", "cout << id");
+        Grammer g17 = new Grammer("cinstmt", "cin >> id");
         Grammer g18 = new Grammer("E'", "* T E' ");
         Grammer g19 = new Grammer("E'", "!");
         Grammer g20 = new Grammer("T'", "+ F T' ");
