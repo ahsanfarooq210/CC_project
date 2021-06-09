@@ -1,10 +1,7 @@
 import Entitiy.Grammer;
 
 import javax.swing.text.TableView;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class LL1Parser
 {
@@ -31,7 +28,7 @@ public class LL1Parser
         Grammer g12 = new Grammer("T", "F T' ");
         Grammer g13 = new Grammer("F", "( E )");
         Grammer g14 = new Grammer("F", "id");
-        Grammer g15 = new Grammer("F", "intleteral");
+        Grammer g15 = new Grammer("F", "intlit");
         Grammer g16 = new Grammer("coutstmt", "cout < < id");
         Grammer g17 = new Grammer("cinstmt", "cin > > id");
         Grammer g18 = new Grammer("E'", "* T E' ");
@@ -118,6 +115,7 @@ public class LL1Parser
 
     public void validate(ArrayList<String> list)
     {
+        ArrayList<String> ans=new ArrayList<>();
         Stack<String> s = new Stack<>();
         s.push("cprogram");
         boolean flag = false;
@@ -142,6 +140,7 @@ public class LL1Parser
             }
             ArrayList<String>productions=grammerReplace.getProductions();
             s.pop();
+            ans.add("replace "+grammerReplace.getLHS()+" with "+grammerReplace.getRHS());
             for(int k=0;k<productions.size();k++)
             {
                 s.push(productions.get(k));
