@@ -84,6 +84,7 @@ public class LL1Parser
                     case "$" -> 15;
                     case "}" -> 16;
                     case "{" -> 17;
+                    case "="->18;
                     default -> -1;
                 };
     }
