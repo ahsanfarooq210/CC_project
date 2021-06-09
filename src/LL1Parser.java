@@ -113,7 +113,7 @@ public class LL1Parser
                 };
     }
 
-    public void validate(ArrayList<String> list)
+    public ArrayList<String> validate(ArrayList<String> list)
     {
         ArrayList<String> ans=new ArrayList<>();
         Stack<String> s = new Stack<>();
@@ -157,6 +157,7 @@ public class LL1Parser
                 inputPointer=list.get(pointerNumber);
                 if (topOfStack.equals(inputPointer))
                 {
+                    ans.add("match "+inputPointer);
                     s.pop();
                     pointerNumber++;
                 }
@@ -182,10 +183,12 @@ public class LL1Parser
         if (!flag)
         {
             System.out.println("error string rejected");
+            return null;
         }
         else
         {
             System.out.println("tokens accepted");
+            return ans;
         }
 
     }

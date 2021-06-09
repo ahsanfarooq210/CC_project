@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainClass
 {
@@ -23,6 +24,17 @@ public class MainClass
         list.add("intlit");
         list.add(";");
         list.add("}");
-        parser.validate(list);
+        ArrayList<String> ans=parser.validate(list);
+        if(ans!=null)
+        {
+            for(int i=0;i<ans.size();i++)
+            {
+                System.out.println(ans.get(i));
+            }
+        }
+        else
+        {
+            System.out.println("invalid string for parser");
+        }
     }
 }
