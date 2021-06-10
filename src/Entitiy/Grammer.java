@@ -2,15 +2,12 @@ package Entitiy;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class Grammer
 {
     private String LHS;
     private String RHS;
-
-
 
 
     public Grammer()
@@ -27,8 +24,6 @@ public class Grammer
 
 
     }
-
-
 
 
     public String getLHS()
@@ -51,10 +46,10 @@ public class Grammer
         this.RHS = RHS;
     }
 
-    public ArrayList<String> getProductions ()
+    public ArrayList<String> getProductions()
     {
-        ArrayList<String> ans =new ArrayList<>();
-        StringTokenizer tokenizer=new StringTokenizer(RHS, " ");
+        ArrayList<String> ans = new ArrayList<>();
+        StringTokenizer tokenizer = new StringTokenizer(RHS, " ");
         while (tokenizer.hasMoreTokens())
         {
             ans.add(tokenizer.nextToken());
@@ -62,7 +57,6 @@ public class Grammer
         Collections.reverse(ans);
         return ans;
     }
-
 
 
 }

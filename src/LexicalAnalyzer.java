@@ -6,7 +6,6 @@ public class LexicalAnalyzer
 {
     private int[][] transitionTable;
     private HashMap<String, String> keywords;
-    private LinkedHashMap<String, String> ans;
     private int[] acceptingState;
     private String[] tokens;
 
@@ -16,7 +15,6 @@ public class LexicalAnalyzer
         populateKeywords();
         populateAcceptingState();
         populateTokens();
-        ans = new LinkedHashMap<>();
     }
 
     private void populateTokens()
@@ -79,7 +77,7 @@ public class LexicalAnalyzer
             int acceptance = checkAcceptance(state);
             if (acceptance == 1)
             {
-                ans.put(tkn, tokens[state]);
+
                 list.add(tokens[state]);
                 tkn = "";
                 state = 0;
@@ -93,7 +91,7 @@ public class LexicalAnalyzer
                         //special case to recognize if the accepted token is ID or a keyword
                         if (keywords.containsKey(tkn.substring(0, tkn.length() - 1)))
                         {
-                            ans.put(tkn.substring(0, tkn.length() - 1), "keyword");
+
                             list.add(tkn.substring(0, tkn.length() - 1));
                             tkn = "";
                             state = 0;
@@ -102,7 +100,7 @@ public class LexicalAnalyzer
                         else
                         {
                             tkn = tkn.substring(0, tkn.length() - 1);
-                            ans.put(tkn, tokens[state]);
+
                             list.add(tokens[state]);
                             tkn = "";
                             state = 0;
@@ -112,7 +110,7 @@ public class LexicalAnalyzer
                     else
                     {
                         tkn = tkn.substring(0, tkn.length() - 1);
-                        ans.put(tkn, tokens[state]);
+
                         list.add(tokens[state]);
                         state = 0;
                         tkn = "";

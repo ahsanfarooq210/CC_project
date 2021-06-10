@@ -11,20 +11,7 @@ public class MainClass
         System.out.println(ansl.toString());
 
         LL1Parser parser=new LL1Parser();
-//        ArrayList<String>list=new ArrayList<>();
-//        list.add("void");
-//        list.add("main");
-//        list.add("(");
-//        list.add(")");
-//        list.add("{");
-//        list.add("int");
-//        list.add("id");
-//        list.add(";");
-//        list.add("id");
-//        list.add("=");
-//        list.add("intlit");
-//        list.add(";");
-//        list.add("}");
+
         System.out.println("output of the LL1 parser");
         ArrayList<String> ans=parser.validate(ansl);
         if(ans!=null)
