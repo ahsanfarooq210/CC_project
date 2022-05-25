@@ -17,5 +17,5 @@ cinstmt--> cin >> id <br />
 
 for theorital part of the project visit the following link:<br />
 
-https://www.notion.so/PROJECT-a0738f1797c7417d82fcd147083a64b3
+https://ahsanfarooq210.notion.site/LL-1-parser-603125cc0cd14fb6a142f12c97610070
 
